@@ -18,7 +18,8 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <a  class="btn btn-outline-success my-2 my-sm-0">Login</a>
+      <a class="btn btn-outline-success my-2 my-sm-0" data-target="#login">Login</a>
+      <a @click="showCart" class="btn btn-outline-info my-2 my-sm-0" data-target="#cartWindow">CART</a>
       <login></login>
     </form>
   </div>
@@ -32,6 +33,11 @@ export default {
   name: 'Navbar',
   components: {
     Login
+  },
+  methods:{
+    showCart(){
+      $('#cartWindow').modal('show')
+    }
   }
 }
 </script>

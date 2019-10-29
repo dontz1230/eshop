@@ -13,6 +13,7 @@
                 <div class="modal-body">
                 <ul>
                     <li v-for="item in this.$store.state.cart">
+                    <img :src="item.productImage" width="80px" alt="">
                     {{ item.productName }}
                     {{ item.productAmount }}個
                     </li>
@@ -20,7 +21,7 @@
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">繼續購物</button>
-                <button type="button" class="btn btn-primary">完成訂單</button>
+                <button @click="checkout" type="button" class="btn btn-primary">完成訂單</button>
                 </div>
             </div>
             </div>
@@ -30,6 +31,11 @@
 
 <script>
 export default {
-    
+    methods:{
+        checkout(){
+            $('#cartWindow').modal('hide')
+            this.$router.push('/checkout')
+        }
+    }
 }
 </script>
