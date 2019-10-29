@@ -1,0 +1,42 @@
+<template>
+  <div>
+      <md-dialog-content>
+          <md-dialog :md-active.sync="showDialog">
+            <md-dialog-title>登入會員</md-dialog-title>
+
+            <md-tabs md-dynamic-height>
+                <md-tab md-label="LOGIN">
+                    <input type="text" placeholder="Email"><br>
+                    <input type="password" placeholder="Passwrod">
+                </md-tab>
+
+                <md-tab md-label="SIGNUP">
+                    d
+                </md-tab>
+
+            </md-tabs>
+
+            <md-dialog-actions>
+                <md-button class="md-primary" @click="showDialog = false">Close</md-button>
+                <md-button class="md-primary" @click="showDialog = false">Save</md-button>
+            </md-dialog-actions>
+    </md-dialog>
+
+    <md-button class="md-primary md-raised" @click="showDialog = true">Show Dialog</md-button></md-dialog-content>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'DialogCustom',
+    data: () => ({
+      showDialog: false
+    })
+  }
+</script>
+
+<style lang="scss" scoped>
+  .md-dialog {
+    max-width: 768px;
+  }
+</style>
